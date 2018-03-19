@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Session Words</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'css/sess_word/sess_word.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <div id='wrapper'>
+        <form action='/process' method='post'>
+            {% csrf_token %}
+            <h1>Add a new word</h1><input type='text' name='word' size=45>
+            <p>Choose color
+                <input type="radio" name="word_color" value="Red"> Red<br>
+                <input type="radio" name="gender" value="Green"> Green<br>
+                <input type="radio" name="gender" value="Blue" checked> Blue<br><br>
+            </p>
+            <p><input type="checkbox" name="word_size" value="20pt"> show in BIG fonts!<br></p>
+            <input type='submit' class='button' value='Add to Session'>
+        </form>
+        <div class='output'>
+            <input type='button' class='clr_but' value='Clear Session'
+
+        </div>
+    </div>      
+</body>
+</html>
